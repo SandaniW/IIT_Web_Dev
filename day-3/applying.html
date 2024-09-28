@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      
+      <style type="text/css">
+         p{color:purple!important; font-size: larger; } 
+         p{color: red; font-size: small;}
+         p::before{
+            content: "hello ";
+            color: green;
+            font-size: 30px;
+            background-color: yellow;
+            padding: 3px 10px;
+            text-align: center;
+            border-radius: 20px;
+            border: dashed 2px orange;
+
+         
+         }
+         p::after{
+            content: " check ";
+         }
+         .circle{
+            height: 100px;
+            width: 300px;
+            background-color: yellow;
+            border-radius: 100px;
+            position: absolute;
+            top: 250px;
+            left: 150px;
+            
+         }
+         .one{
+            rotate: 45deg;
+            
+         }
+         .two{
+            rotate: -45deg;
+         }
+         .square{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(0, 255, 42);
+            position: absolute;
+            top: 250px;
+            left: 600px;
+         } 
+         .box{
+            width: 25%;
+            height: 100px;
+         }
+         .first{
+            background-color: blue;
+         }
+
+      </style>
+      
+   </head>
+   <body>
+      <p>Checking paras</p>
+      <p>lorem ipsum</p>
+      <p>lorem ipsum</p>
+      <div class="circle one"></div>
+      <div class="circle two"></div>
+      <div id="" class="square"></div>
+      <div class="square one"></div>
+      <div class="square two"></div>
+      <br><br>
+      <div id="big-container">
+         <div class="box first">
+
+         </div>
+         <div class="box second">
+
+         </div>
+         <div class="box third">
+
+         </div>
+      </div>
+   </body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Subscribe Form</title>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script src="/main.js"></script>
+
+      <style>
+         body{
+            background-color: rgba(133,189,101,255);
+         }
+         form{
+            background-color: white;
+            width: 600px;
+            height: 500px;
+            margin: 100px auto ;
+            text-align: center;
+            box-shadow: 5px 12px 20px rgba(0,0,0,0.5);
+            ;
+            
+
+         }
+         input{
+            border: none;
+
+         }
+         .input-text{
+            padding-left: 20px;
+            background-color: rgb(236, 236, 236);
+            height: 70px;
+            margin: 10px;
+            width: 75%;
+            font-size: larger;
+         }
+         #username{
+            margin-top: 90px;
+         }
+         #submit{
+            background-color: rgba(84,175,82,255);
+            width: 78%;
+            height: 70px;
+            margin: 10px;
+            color: white;
+            font-size: larger;
+            padding: 5px;
+            border-radius: 2px;
+            
+         }
+         p{
+            color: rgb(199, 198, 198);
+            margin-top: 30px;
+            font-size: 20px;
+         }
+         #create-account{
+            color: rgba(163,196,172,255);
+            text-decoration: none;
+         }
+         .hide{
+            display: none;
+         }
+
+      </style>
+   </head>
+   <body>
+      
+         <form id="subsrcibeForm">
+            <br>
+            <input class="input-text" type="text" id="name" placeholder="username">
+            <br>
+            <input class="input-text" type="email" id="email" placeholder="email">
+            <br>
+            <input type="submit" id="submit" value="Subscribe">
+            <p>Not registered? <a id="create-account"  href="">Subscribe</a></p>
+         </form>
+         <div id="responseMessage"></div>
+         
+   
+   </body>
+</html>

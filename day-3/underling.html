@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         #big-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+         }
+         .box{
+   
+            border: solid pink;
+            margin: 20px;
+            
+         }
+         a{
+            
+            color: red;
+            text-decoration: none;
+            background-color: yellow;
+            border-radius: 20px;
+            padding: 3px 5px;
+         }
+
+         #big-container .box .box a{
+            color: blue;
+            background-color: purple;
+         }
+         
+
+      </style>
+   </head>
+   <body>
+      <div>
+      <div id="big-container">
+         <div class="box first">
+            <a href=""> link one</a>
+         </div>
+         <div class="box second">
+            <a href="">link two</a>
+         </div>
+         <div class="box third">
+            <a href="">link three</a>
+            <div class="box first">
+               <a href=""> link one</a>
+            </div>
+         </div>
+         
+      </div>
+   </body>
+</html>
