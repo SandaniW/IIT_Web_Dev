@@ -25,6 +25,7 @@ const db = new sqlite3.Database('./subscribers.db',(err) => {
    }
 });
 
+//general route
 app.get('/',(req,res) => {
    res.render('form');
 });
@@ -47,6 +48,7 @@ app.post('/post-subscribe',(req,res) =>{
    };
    res.json(response);
 });
+
 //Rout to fetch and display users
 app.get('/dash',(req,res) => {
    db.all('SELECT name, email FROM subscribers',[],(err,rows) => {
@@ -61,6 +63,19 @@ app.get('/dash',(req,res) => {
    });
    db.close();
 });
+
+//Route to delete a user
+app.post('dash/delete/:id',(req,res) => {
+   const userId = req.params.id;
+
+   db.run('DELETE FROM subscribers WHERE id = ?',userId,(err) => {
+      if (err) {
+         console.error(err.message);
+         return res.status(500).send('Database delete error');
+      }
+      res.redirect('/dash');
+   });
+})
 
 
 const PORT = process.env.PORT || 3000;
