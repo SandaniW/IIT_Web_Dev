@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Subscribe Form</title>
       <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-      <script src="/main.js"></script>
+      
 
       <style>
          body{
@@ -15,7 +15,10 @@
             background-color: white;
             width: 600px;
             height: 500px;
-            margin: 100px auto ;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
             text-align: center;
             box-shadow: 5px 12px 20px rgba(0,0,0,0.5);
             ;
@@ -47,9 +50,23 @@
             padding: 5px;
             border-radius: 2px;
             cursor: pointer;
+            box-shadow: 5px 12px 20px rgba(0,0,0,0.3);
          }
          #submit:hover{
-            background-color: rgba(84,165,82,255);
+            background-color: rgba(88,165,90,255);
+            
+
+         }
+         .clicking{
+            box-shadow: 5px 12px 20px rgba(0,0,0,0.2);
+         }
+         #responseMessage{
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 5px;
+            display:block;
+            width: 85%;          
+            margin: auto;
 
          }
          p{
@@ -61,8 +78,13 @@
             color: rgba(163,196,172,255);
             text-decoration: none;
          }
+         
          .hide{
             display: none;
+         }
+         .show{
+            display: block;
+            background-color:rgb(251, 180, 86);
          }
 
       </style>
@@ -70,16 +92,18 @@
    <body>
       
          <form id="subsrcibeForm">
+            
             <br>
             <input class="input-text" type="text" id="name" placeholder="username">
             <br>
             <input class="input-text" type="email" id="email" placeholder="email">
             <br>
             <input type="submit" id="submit" value="Subscribe">
-            <p>Not registered? <a id="create-account"  href="">Subscribe</a></p>
+            <p>Not registered? <a id="create-account"  href="">Subscribe</a></p>            
          </form>
          <div id="responseMessage"></div>
          
-   
+         
+         <script src="/main.js"></script>
    </body>
 </html>
