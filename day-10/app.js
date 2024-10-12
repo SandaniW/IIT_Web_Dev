@@ -76,6 +76,7 @@ app.post('/post-subscribe',(req,res) =>{
          //the json object response is sent from the back
          //and the function success catches it from the front
          res.status(200).json(response);
+         
       }
       
    })
@@ -87,7 +88,7 @@ app.post('/post-subscribe',(req,res) =>{
 
 //Rout to fetch and display users
 app.get('/dash',(req,res) => {
-   db.all('SELECT name, email FROM subscribers',[],(err,rows) => {
+   db.all('SELECT id,name, email FROM subscribers',[],(err,rows) => {
       if(err){
          console.error(err.message);
          return res.status(500).send('Database query error');
@@ -101,15 +102,17 @@ app.get('/dash',(req,res) => {
 });
 
 //Route to delete a user
-app.post('dash/delete/:id',(req,res) => {
+app.post('dash/delete/',(req,res) => {
    const userId = req.params.id;
 
    db.run('DELETE FROM subscribers WHERE id = ?',[userId],(err) => {
       if (err) {
-         console.error(err.message);
-         return res.status(500).send('Error occured unable to delete.');
+         console.log(err.message);
+         return res.status(500).json({message:'Error occured unable to delete.',error: err.message});
+      }else{
+         res.json({userId: userId});
       }
-      res.json({userId: this.lastID});
+      
    });
 })
 

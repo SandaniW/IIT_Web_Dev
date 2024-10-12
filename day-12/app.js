@@ -27,14 +27,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 app.get('/', (req, res) => {
     res.render('layout', {
-        formTitle: 'Add a name',
-        btntxt: 'CLICK ME',
+        formTitle: 'find a name',
+        btntxt: 'Fuck ME',
         color: req.query.color
     });
 });
 
 app.get('/class', (req, res) => {
-    res.render('layout', {
+    res.render('home', {
         formTitle: 'Request a course',
         btntxt: 'Register'
     });
